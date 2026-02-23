@@ -24,13 +24,10 @@ var isValidSudoku = function (board) {
             }
             //block-----------------
             let blockIndex = getBlockIndex(i, j);
-            console.log('blockIndex',blockIndex);
             if (blockMap[blockIndex] && blockMap[blockIndex].includes(board[i][j]) && board[i][j] != ".") {
                 flag = false;
             }
             else {
-                console.log('i,j',i,j);
-                console.log(blockMap);
                 blockMap[blockIndex] = blockMap[blockIndex] ? blockMap[blockIndex].concat(board[i][j]) : blockMap[blockIndex] = [board[i][j]];
             }
         }
@@ -39,10 +36,6 @@ var isValidSudoku = function (board) {
     }
 
 
-    console.log('flag', flag);
-    console.log('rowMap', rowMap);
-    console.log('columnMap', columnMap)
-    console.log('blockMap', columnMap)
     return flag;
 };
 
